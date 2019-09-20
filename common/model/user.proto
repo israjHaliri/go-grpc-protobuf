@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package model;
+
+import "google/protobuf/Empty.proto";
+
+message User {
+    int32 id = 1;
+    string email = 2;
+    string password = 3;
+    string fullname = 4;
+    string token = 5;
+}
+
+message UserList {
+    repeated User list = 1;
+}
+
+message EmailAndPassword {
+    string email = 1;
+    string password = 2;
+}
+
+service Users {
+    rpc FindAllUsers(google.protobuf.Empty) returns (UserList) {}
+    rpc FindUserByEmailAndPAssword(EmailAndPassword) returns (User) {}
+}
