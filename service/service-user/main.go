@@ -30,17 +30,11 @@ func main() {
 	log.Fatal(server.Serve(listener))
 }
 
-
 func (UserServer) FindAllUsers(ctx context.Context, req *empty.Empty) (*model.UserList, error) {
 	dummyUser := model.User{Id: 1, Email: "israj.haliri@gmail.com", Password: "-", Fullname: "israj haliri", Token: "-"}
 
-	userList := []*model.User{}
-	userList = append(userList, &dummyUser)
-
-	var list *model.UserList
-
-	list = new(model.UserList)
-	list.List = userList
+	list := new(model.UserList)
+	list.List = append(list.List, &dummyUser)
 
 	return list, nil
 }
