@@ -3,6 +3,6 @@ module github.com/israjHaliri/go-grpc-protobuf
 go 1.12
 
 require (
-	github.com/golang/protobuf v1.3.2
-	google.golang.org/grpc v1.23.1
+	github.com/golang/protobuf v1.5.2
+	google.golang.org/grpc v1.53.0
 )
